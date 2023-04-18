@@ -21,6 +21,11 @@ public class BasePage {
     private final By CONTACT_BUTTON = By.xpath("//*[contains(@href, '#contact')]");
     private final By HIRE_ME_BUTTON = By.xpath("//*[contains(text(), 'Hire Me')]");
 
+
+    public By getBlogButton() {
+        return BLOG_BUTTON;
+    }
+
     public void clickHomeButton(){
         driver.findElement(HOME_BUTTON).click();
     }

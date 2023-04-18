@@ -5,6 +5,8 @@ import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -141,7 +143,8 @@ public class PortioTest extends BaseTest{
         //Login with existing user
         loginWithExistingUserTest();
 
-        //Navigate to 'Blog' tab
+        //Navigate to 'Blog' tab when visible
+        wait.until(ExpectedConditions.elementToBeClickable(landingPage.getBlogButton()));
         landingPage.clickBlogButton();
 
         //Click 'See all post' button

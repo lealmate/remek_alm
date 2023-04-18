@@ -34,4 +34,16 @@ public class RegisterTest extends BaseTest{
         //Assert if registration is successful
         Assertions.assertTrue(signingPage.lookForSuccessfulRegistration());
     }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Registration then login function test")
+    @DisplayName("RegistrationThenLogin")
+    public void registrationThenLoginTest(){
+        //Register and login with new user
+        signingPage.registerThenLogin("kosza", "lajos", "kosza.lajos@citromail.hu", "Just your average Lajos");
+
+        //Assert if login is successful
+        Assertions.assertTrue(landingPage.getLogoutButton());
+    }
 }

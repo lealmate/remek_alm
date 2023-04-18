@@ -168,10 +168,10 @@ public class PortioTest extends BaseTest{
         landingPage.saveImage();
 
         //Assert if image is saved
-        Assertions.assertTrue(landingPage.lookForSuccessfulSave());
+        Assertions.assertTrue(landingPage.lookForSuccessfulDownload("img.png"));
 
         //Delete downloaded image
-        landingPage.deleteImage();
+        landingPage.deleteFile("img.png");
     }
 
     @Test

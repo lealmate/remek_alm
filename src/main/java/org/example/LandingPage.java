@@ -19,6 +19,7 @@ public class LandingPage extends BasePage{
     private final By PROFILE_BUTTON = By.xpath("//*[@id = 'profile-btn']");
     private final By SEE_ALL_POST_BUTTON = By.xpath("//*[contains(@href, '/blog') and text() = 'See all post']");
     private final By IMAGE = By.xpath("//*[@alt = 'hero-image']");
+    private final By DOWNLOAD_CV_BUTTON = By.xpath("//*[contains(text(), 'Download CV')]");
 
     public boolean getLogoutButton() {
         return driver.findElement(LOGOUT_BUTTON).isDisplayed();
@@ -55,18 +56,18 @@ public class LandingPage extends BasePage{
         }
     }
 
-    public boolean lookForSuccessfulSave(){
-        File f = new File("img.png");
+    public boolean lookForSuccessfulDownload(String fileName){
+        File f = new File(fileName);
         if(f.exists() && !f.isDirectory()) {
             return true;
         }
         return false;
     }
 
-    public void deleteImage(){
-        File f = new File("img.png");
+    public void deleteFile(String fileName){
+        File f = new File(fileName);
         f.delete();
-        System.out.println("Image deleted");
+        System.out.println("File deleted");
     }
 
     public boolean lookForSuccessfulLogin(){

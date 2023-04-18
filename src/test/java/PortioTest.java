@@ -150,6 +150,7 @@ public class PortioTest extends BaseTest{
         //Get all article titles
         List<String> actualResult = blogPage.getArticleTitles();
         List<String> expectedResult = blogPage.getTitleFromFile();
+        screenshot();
 
         //Assert if article titles are correct
         Assertions.assertEquals(expectedResult, actualResult);
@@ -189,6 +190,7 @@ public class PortioTest extends BaseTest{
             signingPage.loginProcess(key, CREDENTIALS.get(key));
             signingPage.clickLoginButton();
             Assertions.assertTrue(landingPage.lookForSuccessfulLogin());
+            screenshot();
             landingPage.navigate();
         }
     }

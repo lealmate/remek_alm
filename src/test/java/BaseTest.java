@@ -34,6 +34,8 @@ public class BaseTest {
     ProfilePage profilePage;
     RecentWorksPage recentWorksPage;
     SigningPage signingPage;
+    RegisterTest registerTest;
+    LoginTest loginTest;
     Actions action;
     static Map<String, String> CREDENTIALS = new HashMap<>();
 
@@ -60,6 +62,8 @@ public class BaseTest {
         profilePage = new ProfilePage(driver);
         recentWorksPage = new RecentWorksPage(driver);
         signingPage = new SigningPage(driver);
+        registerTest = new RegisterTest();
+        loginTest = new LoginTest();
         action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }

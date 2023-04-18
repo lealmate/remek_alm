@@ -38,4 +38,5 @@ Ez a projekt hasznosítja mindazt a tudást, amit ez alatt a rövid 2 hónap ala
 ## Szerző
 
 Vizsgázó: Almáshegyi Leó Máté
+
 Mentor: Lenner Tamás

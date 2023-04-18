@@ -120,7 +120,7 @@ public class PortioTest extends BaseTest{
         //Register and login with new user
         loginWithNewlyRegisteredUserTest();
 
-        //Click 'Delete Profile' button
+        //Click 'Edit Profile' button
         landingPage.clickProfileButton();
 
         //Click 'Delete' button

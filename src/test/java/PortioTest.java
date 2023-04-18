@@ -144,7 +144,7 @@ public class PortioTest extends BaseTest{
         loginWithExistingUserTest();
 
         //Navigate to 'Blog' tab when visible
-        wait.until(ExpectedConditions.elementToBeClickable(landingPage.getBlogButton()));
+        screenshot();
         landingPage.clickBlogButton();
 
         //Click 'See all post' button

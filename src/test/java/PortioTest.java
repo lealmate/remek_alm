@@ -3,6 +3,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Description("Registration of new user")
+    @DisplayName("Registration")
     public void registerTest(){
         //Navigate to page
         landingPage.navigate();
@@ -35,6 +37,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Description("Login with newly created user")
+    @DisplayName("Login with new user")
     public void loginWithNewlyRegisteredUserTest(){
         //Register a new user
         registerTest();
@@ -55,6 +58,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Description("Login with existing user")
+    @DisplayName("Login with existing user")
     public void loginWithExistingUserTest(){
         //Navigate to page
         landingPage.navigate();
@@ -75,6 +79,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Logout from account")
+    @DisplayName("Logout")
     public void logoutTest(){
         //Register and login with new user
         loginWithNewlyRegisteredUserTest();
@@ -89,6 +94,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.MINOR)
     @Description("Editing profile information")
+    @DisplayName("Edit profile")
     public void editProfileTest(){
         //Register and login with new user
         loginWithNewlyRegisteredUserTest();
@@ -108,7 +114,8 @@ public class PortioTest extends BaseTest{
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("Deleting newly created account")
+    @Description("Deleting newly created profile")
+    @DisplayName("Delete profile")
     public void deleteProfileTest(){
         //Register and login with new user
         loginWithNewlyRegisteredUserTest();
@@ -129,6 +136,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.TRIVIAL)
     @Description("Walk through of multi-page blog, comparing article names from file")
+    @DisplayName("Article names")
     public void blogArticleTest(){
         //Login with existing user
         loginWithExistingUserTest();
@@ -150,6 +158,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.TRIVIAL)
     @Description("Saving an image")
+    @DisplayName("Save image")
     public void saveImageTest(){
         //Login with existing user
         loginWithExistingUserTest();
@@ -167,6 +176,7 @@ public class PortioTest extends BaseTest{
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("Login with multiple users repeatedly from file")
+    @DisplayName("Login with multiple users")
     public void loginWithMultipleUsersFromFileTest(){
         //Navigate to page
         landingPage.navigate();

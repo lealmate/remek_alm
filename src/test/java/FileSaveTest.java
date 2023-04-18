@@ -18,7 +18,7 @@ public class FileSaveTest extends BaseTest{
     @DisplayName("Save image")
     public void saveImageTest(){
         //Login with existing user
-        loginTest.loginWithExistingUserTest();
+        signingPage.login("lovasia", "kispal123");
 
         //Save image
         landingPage.saveImage();

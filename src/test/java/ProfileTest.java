@@ -17,7 +17,7 @@ public class ProfileTest extends BaseTest{
     @DisplayName("Edit profile")
     public void editProfileTest(){
         //Register and login with new user
-        loginTest.loginWithNewlyRegisteredUserTest();
+        signingPage.registerThenLogin("kosza", "lajos", "kosza.lajos@citromail.hu", "Just your average Lajos");
 
         //Click 'Edit Profile' button
         landingPage.clickProfileButton();
@@ -38,7 +38,7 @@ public class ProfileTest extends BaseTest{
     @DisplayName("Delete profile")
     public void deleteProfileTest(){
         //Register and login with new user
-        loginTest.loginWithNewlyRegisteredUserTest();
+        signingPage.registerThenLogin("kosza", "lajos", "kosza.lajos@citromail.hu", "Just your average Lajos");
 
         //Click 'Edit Profile' button
         landingPage.clickProfileButton();

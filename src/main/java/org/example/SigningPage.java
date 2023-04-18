@@ -90,4 +90,28 @@ public class SigningPage extends BasePage{
             return false;
         }
     }
+
+    public void login(String username, String password){
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.navigate();
+        landingPage.clickAcceptTermsButton();
+        loginProcess(username, password);
+        clickLoginButton();
+    }
+
+    public void register(String username, String password, String email, String description){
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.navigate();
+        landingPage.clickAcceptTermsButton();
+        clickRegisterFormButton();
+        registrationProcess(username, password, email, description);
+        clickRegisterButton();
+    }
+
+    public void registerThenLogin(String username, String password, String email, String description){
+        register(username, password, email, description);
+        clickLoginFormButton();
+        loginProcess("kosza", "lajos");
+        clickLoginButton();
+    }
 }

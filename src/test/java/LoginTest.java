@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest{
     @DisplayName("Login with new user")
     public void loginWithNewlyRegisteredUserTest(){
         //Register a new user
-        registerTest.registerTest();
+        signingPage.register("kosza", "lajos", "kosza.lajos@citromail.hu", "Just your average Lajos");
 
         //Navigate to 'Login' tab
         signingPage.clickLoginFormButton();
@@ -92,5 +92,18 @@ public class LoginTest extends BaseTest{
             screenshot();
             landingPage.navigate();
         }
+    }
+
+    @Story("Login")
+    @Test
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("Login function test")
+    @DisplayName("Login function test")
+    public void loginFunctionTest(){
+        //Initiate 'login' function
+        signingPage.login("lovasia", "kispal123");
+
+        //Assert if login is successful
+        Assertions.assertTrue(landingPage.getLogoutButton());
     }
 }

@@ -19,7 +19,7 @@ public class BlogTest extends BaseTest{
     @DisplayName("Article names")
     public void blogArticleTest(){
         //Login with existing user
-        loginTest.loginWithExistingUserTest();
+        signingPage.login("lovasia", "kispal123");
 
         //Navigate to 'Blog' tab when visible
         screenshot();

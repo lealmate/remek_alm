@@ -29,6 +29,7 @@ public class BlogTest extends BaseTest{
         landingPage.clickBlogButton();
 
         //Click 'See all post' button
+        wait.until(ExpectedConditions.elementToBeClickable(landingPage.getSeeAllPostButton()));
         landingPage.clickSeeAllPostButton();
 
         //Get all article titles

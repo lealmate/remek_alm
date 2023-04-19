@@ -25,6 +25,10 @@ public class LandingPage extends BasePage{
         return driver.findElement(LOGOUT_BUTTON).isDisplayed();
     }
 
+    public By getSeeAllPostButton() {
+        return SEE_ALL_POST_BUTTON;
+    }
+
     public void navigate(){
         driver.navigate().to(URL);
     }

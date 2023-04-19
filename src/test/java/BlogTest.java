@@ -6,6 +6,8 @@ import jdk.jfr.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class BlogTest extends BaseTest{
 
         //Navigate to 'Blog' tab when visible
         screenshot();
+        wait.until(ExpectedConditions.elementToBeClickable(landingPage.getBlogButton()));
         landingPage.clickBlogButton();
 
         //Click 'See all post' button

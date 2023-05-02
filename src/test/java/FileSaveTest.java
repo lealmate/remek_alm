@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 @Epic("Downloads - Portio")
 @Story("Save data")
 public class FileSaveTest extends BaseTest{
@@ -30,4 +32,24 @@ public class FileSaveTest extends BaseTest{
         landingPage.deleteFile("img.png");
     }
 
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Saving lines of text from site to file")
+    @DisplayName("Save text")
+    public void saveTextTest() throws IOException {
+        //Login with existing user
+        signingPage.login("lovasia", "kispal123");
+
+        //Navigate to 'Contact' page
+        landingPage.clickHireMeButton();
+
+        //Save text
+        contactPage.saveContactInfoToFile();
+
+        //Assert if text is saved
+        Assertions.assertTrue(landingPage.lookForSuccessfulDownload("output.txt"));
+
+        //Delete downloaded text
+        landingPage.deleteFile("output.txt");
+    }
 }

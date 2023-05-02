@@ -9,6 +9,7 @@ public class SigningPage extends BasePage{
         super(driver);
     }
 
+    //Elements to be located
     private final By LOGIN_FORM_BUTTON = By.xpath("//*[@style = 'display: block;']//*[@id = 'login-form-button']");
     private final By REGISTER_FORM_BUTTON = By.xpath("//*[@id = 'register-form-button']");
     private final By USERNAME = By.xpath("//*[@placeholder = 'Username']");
@@ -21,6 +22,7 @@ public class SigningPage extends BasePage{
     private final By DESCRIPTION_REGISTER = By.xpath("//*[@id = 'register-description']");
     private final By SUCCESSFUL_REGISTRATION = By.xpath("//*[text() = 'User registered!']");
 
+    //Functions
     public void fillUsername(String username){
         driver.findElement(USERNAME).sendKeys(username);
     }

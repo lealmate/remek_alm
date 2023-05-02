@@ -15,9 +15,11 @@ public class BlogPage extends BasePage {
         super(driver);
     }
 
+    //Elements to be located
     private final By ARTICLES = By.xpath("//*[@class = 'blog-page__item']");
     private final By NEXT_PAGE_BUTTON = By.xpath("//*[@rel = 'next']");
 
+    //Functions
     public void clickNextPageButton() {
         driver.findElement(NEXT_PAGE_BUTTON).click();
     }

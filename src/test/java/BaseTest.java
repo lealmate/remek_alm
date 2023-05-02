@@ -32,11 +32,11 @@ public class BaseTest {
     BlogPage blogPage;
     ContactPage contactPage;
     ProfilePage profilePage;
-    RecentWorksPage recentWorksPage;
     SigningPage signingPage;
     Actions action;
     static Map<String, String> CREDENTIALS = new HashMap<>();
 
+    //Initializing everything needed for the tests
     @BeforeEach
     public void init() {
         WebDriverManager.chromedriver().setup();
@@ -58,12 +58,12 @@ public class BaseTest {
         blogPage = new BlogPage(driver);
         contactPage = new ContactPage(driver);
         profilePage = new ProfilePage(driver);
-        recentWorksPage = new RecentWorksPage(driver);
         signingPage = new SigningPage(driver);
         action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
+    //Reading credentials from JSON file for "Login with multiple users" test
     @BeforeAll
     public static void beforeAll() throws IOException, ParseException {
         JSONParser parser = new JSONParser();
@@ -79,11 +79,13 @@ public class BaseTest {
         }
     }
 
+    //Function for taking screenshot
     @Attachment(value = "Screenshot", type = "image/png")
     public void screenshot() {
         Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
+    //Quitting the driver after each test
     @AfterEach
     public void quit(){
         driver.quit();

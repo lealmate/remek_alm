@@ -34,6 +34,7 @@ Ez a projekt hasznosítja mindazt a tudást, amit ez alatt a rövid 2 hónap ala
 
 * Tesztelt weboldal: https://lennertamas.github.io/portio/
 * Allure report: https://lealmate.github.io/remek_alm/
+* GitHub repository: https://github.com/lealmate/remek_alm
 
 ## Szerző
 

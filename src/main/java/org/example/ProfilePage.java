@@ -8,6 +8,7 @@ public class ProfilePage extends BasePage{
         super(driver);
     }
 
+    //Elements to be located
     private final By NAME = By.xpath("//*[@id = 'name']");
     private final By BIO = By.xpath("//*[@id = 'bio']");
     private final By PHONE_NUMBER = By.xpath("//*[@id = 'phone-number']");
@@ -16,6 +17,7 @@ public class ProfilePage extends BasePage{
     private final By CONFIRM_DELETE_ACCOUNT_BUTTON = By.xpath("//*[@onclick = 'deleteAccount()']");
     private final By SUCCESSFUL_EDIT_MESSAGE = By.xpath("//*[@id = 'edit-alert' and @style='display: block;']");
 
+    //Functions
     public void clickSaveProfileButton(){
         driver.findElement(SAVE_PROFILE_BUTTON).click();
     }

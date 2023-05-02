@@ -11,6 +11,7 @@ public class BasePage {
         this.driver = driver;
     }
 
+    //Elements that can be found on all pages
     private final By HOME_BUTTON = By.xpath("//*[@href='landing.html']");
     private final By ABOUT_BUTTON = By.xpath("//*[contains(@href, '#about')]");
     private final By SERVICE_BUTTON = By.xpath("//*[contains(@href, '#service')]");
@@ -22,6 +23,7 @@ public class BasePage {
     private final By HIRE_ME_BUTTON = By.xpath("//*[contains(text(), 'Hire Me')]");
 
 
+    //Functions
     public By getBlogButton() {
         return BLOG_BUTTON;
     }

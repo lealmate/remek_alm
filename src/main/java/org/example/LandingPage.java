@@ -13,14 +13,16 @@ public class LandingPage extends BasePage{
         super(driver);
     }
 
+    //Elements to be located
     private final String URL = "https://lennertamas.github.io/portio/";
     private final By ACCEPT_TERMS_BUTTON = By.xpath("//*[@id = 'terms-and-conditions-button']");
+    private final By CLOSE_TERMS_BUTTON = By.xpath("//*[@onclick = 'closeModal()']");
     private final By LOGOUT_BUTTON = By.xpath("//*[@onclick = 'logout()']");
     private final By PROFILE_BUTTON = By.xpath("//*[@id = 'profile-btn']");
     private final By SEE_ALL_POST_BUTTON = By.xpath("//*[contains(@href, '/blog') and text() = 'See all post']");
     private final By IMAGE = By.xpath("//*[@alt = 'hero-image']");
-    private final By DOWNLOAD_CV_BUTTON = By.xpath("//*[contains(text(), 'Download CV')]");
 
+    //Functions
     public boolean getLogoutButton() {
         return driver.findElement(LOGOUT_BUTTON).isDisplayed();
     }
@@ -35,6 +37,10 @@ public class LandingPage extends BasePage{
 
     public void clickAcceptTermsButton(){
         driver.findElement(ACCEPT_TERMS_BUTTON).click();
+    }
+
+    public void clickCloseTermsButton(){
+        driver.findElement(CLOSE_TERMS_BUTTON).click();
     }
 
     public void clickLogoutButton(){
@@ -81,5 +87,12 @@ public class LandingPage extends BasePage{
         }catch (Exception e){
             return false;
         }
+    }
+
+    public boolean isTermsAndConditionsAccepted(){
+        if(driver.findElement(ACCEPT_TERMS_BUTTON).isDisplayed()){
+            return false;
+        }
+        return true;
     }
 }
